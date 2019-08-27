@@ -238,13 +238,22 @@ public class SelectFileByBrowserActivity extends AppCompatActivity
                 executeListTask(mSelectedFileList, mCurFolder + item.getName() + File.separator, SelectOptions.getInstance().getFileTypes(), SelectOptions.getInstance().getSortType());
             } else {
                 //选中某文件后，判断是否单选
+//                if (SelectOptions.getInstance().isSingle) {
+//                    Intent result = new Intent();
+//                    result.putParcelableArrayListExtra(Const.EXTRA_RESULT_SELECTION, mSelectedFileList);
+//                    setResult(RESULT_OK, result);
+//                    super.onBackPressed();
+//                    return;
+//                }
+
                 if (SelectOptions.getInstance().isSingle) {
                     Intent result = new Intent();
+                    mSelectedFileList.add(item);
                     result.putParcelableArrayListExtra(Const.EXTRA_RESULT_SELECTION, mSelectedFileList);
-                    setResult(RESULT_OK, result);
-                    super.onBackPressed();
+                    setResult(RESULT_OK, result); super.onBackPressed();
                     return;
                 }
+
                 if (mAdapter.getData().get(position).isChecked()) {
                     int index = findFileIndex(item);
                     if (index != -1) {
