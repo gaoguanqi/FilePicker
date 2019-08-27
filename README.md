@@ -1,5 +1,6 @@
 # FilePicker
-lib
+文件选择器
+本项目基于  https://github.com/imLibo/FilePicker 修复了部分bug
 
 # How to
 To get a Git project into your build:
