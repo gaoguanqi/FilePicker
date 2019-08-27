@@ -29,7 +29,8 @@ Share this release:
 # 使用方法：
 # 1，  Theme  NoTitleBar
 # 2，  权限申请 READ_EXTERNAL_STORAGE
-# 3， ```
+# 3，
+```
 FilePicker.from(this)
         .chooseForBrowser()
                 .setMaxCount(1)
@@ -38,7 +39,8 @@ FilePicker.from(this)
                 .start();     
 ```		
    
-# 4， ```
+# 4，
+```
    @Override
    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK) {
