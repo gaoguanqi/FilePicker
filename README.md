@@ -29,14 +29,17 @@ Share this release:
 # 使用方法：
 # 1，  Theme  NoTitleBar
 # 2，  权限申请 READ_EXTERNAL_STORAGE
-# 3， FilePicker.from(this)
-                .chooseForBrowser()
+# 3， ```
+FilePicker.from(this)
+        .chooseForBrowser()
                 .setMaxCount(1)
                 .setFileTypes("png", "doc", "apk", "mp3", "gif", "txt", "mp4", "zip")
                 .requestCode(REQUEST_CODE_FILE)
-                .start();
-
-# 4，  @Override
+                .start();     
+```		
+   
+# 4， ```
+   @Override
    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK) {
             switch (requestCode) {
@@ -53,5 +56,5 @@ Share this release:
         }
         super.onActivityResult(requestCode, resultCode, data);
     } 
-
+```
   
